@@ -1,24 +1,36 @@
 package conta;
 
-import java.util.Scanner;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.model.Conta;
+
+import java.util.Scanner;
 import conta.util.Cores;
 
 public class Menu {
     public static void main(String[] args) {
 
-        Conta c1 = new Conta(1,123,1,"Adriana",10000.0f);
-        c1.visualizar();
-        c1.sacar(12000.0f);
-        c1.visualizar();
-        c1.depositar(5000.0f);
-        c1.visualizar();
+        //Testes da Classe Conta Corrente
+        ContaCorrente conta1 = new ContaCorrente(151,10,1,"Lucas",15000.0f,1000.0f);
+        conta1.visualizar();
+        conta1.sacar(12000.0f);
+        conta1.visualizar();
+        conta1.depositar(5000.0f);
+        conta1.visualizar();
+
+        //Testes da Classe Conta Poupança
+        ContaPoupanca conta2 = new ContaPoupanca(3,131,2,"Vinicius", 100000.0f,15);
+        conta2.visualizar();
+        conta2.sacar(1000.0f);
+        conta2.visualizar();
+        conta2.depositar(5000.0f);
+        conta2.visualizar();
 
         Scanner leia = new Scanner(System.in);
 
         int opcao;
 
-        while(true) {
+        while (true) {
 
             System.out.println(Cores.TEXT_RED + Cores.ANSI_BLACK_BACKGROUND
                     + "*****************************************************");
@@ -93,7 +105,7 @@ public class Menu {
     public static void sobre() {
         System.out.println("\n*********************************************************");
         System.out.println("Projeto Desenvolvido por : Lucas Oliveira");
-        System.out.println("Generation Brasil - generation@generation.org");
+        System.out.println("Lucas Oliveira - lucasvmo42@gmail.com");
         System.out.println("github.com/Lucassai");
         System.out.println("*********************************************************");
     }
